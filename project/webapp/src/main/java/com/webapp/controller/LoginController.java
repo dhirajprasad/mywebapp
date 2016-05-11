@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.webapp.web.vo.Community;
 import com.webapp.web.vo.DepartmentEditor;
 import com.webapp.web.vo.DepartmentVO;
 import com.webapp.web.vo.EmployeeVo;
@@ -26,6 +27,15 @@ public class LoginController {
 	public void initBinder(WebDataBinder binder) {
 	    binder.registerCustomEditor(DepartmentVO.class, new DepartmentEditor());
 	}
+	
+	 @ModelAttribute("community")
+	    public List<Community> populateCommunity(){
+		 ArrayList<Community> community = new ArrayList<Community>();
+		 community.add(new Community("Spring", "Spring"));
+		 community.add(new Community("Hibernate", "Hibernate"));
+		 community.add(new Community("Struts", "Struts"));
+		 return community;
+	 }
 	 @ModelAttribute("allDepartments")
 	    public List<DepartmentVO> populateDepartments(){
 		    System.out.println("allDepartments");
@@ -51,6 +61,8 @@ public class LoginController {
 	            BindingResult result, SessionStatus status) {
 	 
 		 System.out.println("employeeVO sept"+employeeVO.getDepartment().getName());
+		 System.out.println("employeeVO "+employeeVO.getCommunityList());
+		 System.out.println("employeeVO  Gender "+employeeVO.getGender());
 //	        Set<ConstraintViolation<EmployeeVO>> violations = validator.validate(employeeVO);
 	         
 //	        for (ConstraintViolation<EmployeeVO> violation : violations) 

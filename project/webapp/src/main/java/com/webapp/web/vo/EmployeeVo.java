@@ -1,5 +1,7 @@
 package com.webapp.web.vo;
 
+import java.util.List;
+
 public class EmployeeVo {
 	private static final long serialVersionUID = 1L;
 	 
@@ -13,8 +15,23 @@ public class EmployeeVo {
     
     private DepartmentVO department;
     
+    private String gender;
+    
+    private List communityList;
     
      
+	public List getCommunityList() {
+		return communityList;
+	}
+	public void setCommunityList(List communityList) {
+		this.communityList = communityList;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 	public DepartmentVO getDepartment() {
 		return department;
 	}
