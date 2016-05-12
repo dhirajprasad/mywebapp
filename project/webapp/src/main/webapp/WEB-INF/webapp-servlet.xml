@@ -43,12 +43,4 @@
 			</list>
 		</property>
 	</bean> 
-	<!-- <bean id="logAspect" class="com.webapp.aspect.LoggingAspect" /> -->
-	
-
-
-
-
-
-
 </beans>       
