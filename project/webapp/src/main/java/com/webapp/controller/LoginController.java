@@ -55,13 +55,11 @@ public class LoginController {
 	    }
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
-		System.out.println("sdfdsfsdf");
-		
 		model.addAttribute("message", "Spring 3 MVC Hello World");
-		 EmployeeVo employeeVO=new EmployeeVo();
-	        model.addAttribute("employee", employeeVO);
-//		return "hellotemp";
-		return "index1";
+		EmployeeVo employeeVO=new EmployeeVo();
+	    model.addAttribute("employee", employeeVO);
+		return "hellotemp";
+//		return "index1";
 
 	}
 	 @RequestMapping(value = "/addEmployee",method = RequestMethod.POST)

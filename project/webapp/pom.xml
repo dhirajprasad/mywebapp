@@ -77,6 +77,12 @@
 	<artifactId>tiles-template</artifactId>
 	<version>3.0.5</version>
 	</dependency>
+	<!-- <dependency>
+	<groupId>org.apache.tiles</groupId>
+	<artifactId>tiles-el</artifactId>
+	<version>3.0.5</version>
+	</dependency> -->
+	
 	<!-- Spring AOP + AspectJ -->
 		<dependency>
 			<groupId>org.springframework</groupId>

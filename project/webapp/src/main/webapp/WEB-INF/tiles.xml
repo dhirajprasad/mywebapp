@@ -5,15 +5,14 @@
 <tiles-definitions> 
 	<definition name="basedefinition" template="WEB-INF/pages/layout.jsp">  
         <put-attribute name="title" value=""></put-attribute>  
-        <put-attribute name="header" value="WEB-INF/pages/header.jsp"></put-attribute>  
-        <put-attribute name="menu" value="WEB-INF/pages/menu.jsp"></put-attribute>  
+        <put-attribute name="header" value="/WEB-INF/pages/header.jsp"></put-attribute>  
+        <put-attribute name="menu" value="/WEB-INF/pages/menu.jsp"></put-attribute>  
         <put-attribute name="body" value=""></put-attribute>  
-        <put-attribute name="footer" value="WEB-INF/pages/footer.jsp"></put-attribute>  
+        <put-attribute name="footer" value="/WEB-INF/pages/footer.jsp"></put-attribute>  
     </definition> 
     <definition name="index1" template="WEB-INF/pages/index.jsp"/>   
 	<definition name="hellotemp" extends="basedefinition">  
-        <put-attribute name="title" value="Hello Spring MVC" />  
-        <put-attribute name="body" value="WEB-INF/pages/hello.jsp" />  
+        <put-attribute name="body" value="/WEB-INF/pages/index.jsp" />  
     </definition>
     <definition name="index2" template="/index.jsp"/>    
 </tiles-definitions>
