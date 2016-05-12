@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.webapp.exception.DAOException;
+import com.webapp.service.EmployeeService;
 import com.webapp.web.vo.Community;
 import com.webapp.web.vo.DepartmentEditor;
 import com.webapp.web.vo.DepartmentVO;
@@ -23,6 +26,10 @@ import com.webapp.web.vo.EmployeeVo;
 
 @Controller
 public class LoginController {
+	
+	@Autowired
+	EmployeeService employeeservice;
+	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 	    binder.registerCustomEditor(DepartmentVO.class, new DepartmentEditor());
@@ -49,6 +56,7 @@ public class LoginController {
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
 		System.out.println("sdfdsfsdf");
+		
 		model.addAttribute("message", "Spring 3 MVC Hello World");
 		 EmployeeVo employeeVO=new EmployeeVo();
 	        model.addAttribute("employee", employeeVO);
@@ -63,6 +71,11 @@ public class LoginController {
 		 System.out.println("employeeVO sept"+employeeVO.getDepartment().getName());
 		 System.out.println("employeeVO "+employeeVO.getCommunityList());
 		 System.out.println("employeeVO  Gender "+employeeVO.getGender());
+		 try {
+				employeeservice.addEmployee(employeeVO);
+			} catch (DAOException e) {
+				e.printStackTrace();
+			}
 //	        Set<ConstraintViolation<EmployeeVO>> violations = validator.validate(employeeVO);
 	         
 //	        for (ConstraintViolation<EmployeeVO> violation : violations) 
