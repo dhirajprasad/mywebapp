@@ -14,5 +14,6 @@
 	<definition name="hellotemp" extends="basedefinition">  
         <put-attribute name="title" value="Hello Spring MVC" />  
         <put-attribute name="body" value="WEB-INF/pages/hello.jsp" />  
-    </definition>   
+    </definition>
+    <definition name="index2" template="/index.jsp"/>    
 </tiles-definitions>
