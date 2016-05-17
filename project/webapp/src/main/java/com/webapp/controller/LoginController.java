@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -14,6 +18,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,10 +31,13 @@ import com.webapp.web.vo.EmployeeVo;
 
 @Controller
 public class LoginController {
-	
+	public LoginController() {
+		System.out.println(">>>>>>>>>>>>>>>>>");
+	}
 	@Autowired
 	EmployeeService employeeservice;
-	
+	@Value(value = "dhiraj")
+	String val;
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 	    binder.registerCustomEditor(DepartmentVO.class, new DepartmentEditor());
@@ -53,11 +61,12 @@ public class LoginController {
 	        departments.add(new DepartmentVO(3,  "Information Technology"));
 	        return departments;
 	    }
-	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	public String printWelcome(ModelMap model) {
-		model.addAttribute("message", "Spring 3 MVC Hello World");
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	public String printWelcome(@RequestParam("user")String user,@RequestParam("pwd")String pwd, ModelMap model) {
+		model.addAttribute("message", "Add Employee Detail");
 		EmployeeVo employeeVO=new EmployeeVo();
 	    model.addAttribute("employee", employeeVO);
+	    System.out.println(">>>>>>"+user+"password" + pwd);
 		return "hellotemp";
 //		return "index1";
 
@@ -68,7 +77,7 @@ public class LoginController {
 	 
 		 System.out.println("employeeVO sept"+employeeVO.getDepartment().getName());
 		 System.out.println("employeeVO "+employeeVO.getCommunityList());
-		 System.out.println("employeeVO  Gender "+employeeVO.getGender());
+		 System.out.println("employeeVO  Gender  "+employeeVO.getGender()+val);
 		 try {
 				employeeservice.addEmployee(employeeVO);
 			} catch (DAOException e) {
@@ -98,8 +107,8 @@ public class LoginController {
 	        return "redirect:success.htm";
 	    }
 	@RequestMapping(value = "/success", method = RequestMethod.GET)  
-	public ModelAndView welcome() {  
+	public String welcome() {  
 		System.out.println("index");
-	  return new ModelAndView("index2");  
+	  return "index2";  
 	 } 
 }
