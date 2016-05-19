@@ -32,7 +32,7 @@ import com.webapp.web.vo.EmployeeVo;
 @Controller
 public class LoginController {
 	public LoginController() {
-		System.out.println(">>>>>>>>>>>>>>>>>");
+		System.out.println("creating loginController");
 	}
 	@Autowired
 	EmployeeService employeeservice;

@@ -94,11 +94,51 @@ display: block;
         color: #ff0000;
         font-weight: bold;
     }
+    
+
+
+.navbar {
+float: left;
+margin-left: -1%;
+max-height: 50px;
+color: #F89406;
+font-weight: 200;
+font-size: 26px;
+width: -moz-available;
+margin-top: -152px;
+text-shadow: 0px 1px 0px #FFF;
+height: 250px;
+background-color: #000;
+display: block;
+margin-right: -8px;
+}
+
+.navbar .nav.pull-right-menuoption {
+    float: right;
+    margin-right: 0px;
+    padding-top: 5px;
+}
+
 </style>
 <title>Insert title here</title>
 </head>
 <body>
 <!-- <a href="add.htm">click</a> -->
+<div class="navbar">
+<div class="navbar-inner">
+<div class="nav-container">
+<a class="brand" href="http://www.studytonight.com/" title="Take me Home :)"><img style="max-height:45px;" id="brand-icon" src="/css/resource.v2/icons/studytonight/st-icon.png" alt="studytonight.com"></a>
+<ul class="nav pull-right-menuoption nav-right-responsive">
+
+<!-- <font color="orange">Study</font>tonight<sup><span id="beta">&#946;eta</span></sup> -->
+<li><a href="http://www.studytonight.com/login">LogIn</a></li>
+
+</ul>
+
+
+</div>
+</div>
+</div>
 <div class="form">
 
  <form:form method="post" action="add.htm">

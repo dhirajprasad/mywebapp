@@ -10,6 +10,7 @@
        http://www.springframework.org/schema/aop 
 	   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
+	<import resource="classpath:webappdao.xml"/>
 	<aop:aspectj-autoproxy />
 	<!-- Specifying base package of the Components like Controller, Service,DAO -->
 	<context:component-scan base-package="com.webapp.*" />

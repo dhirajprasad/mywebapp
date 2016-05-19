@@ -28,28 +28,18 @@
   	<version>1.0</version>
   	</dependency>
   	<dependency>
+  	<groupId>com.dp.project</groupId>
+  	<artifactId>webappDAO</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
 	<groupId>javax.servlet</groupId>
 	<artifactId>jstl</artifactId>
 	<version>1.2</version>
 	</dependency>
   	
   	<!--Spring Dependency  -->
-  	<!-- Spring dependencies -->
-	<dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-core</artifactId>
-	<version>${spring.version}</version>
-	</dependency>
-	<dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-web</artifactId>
-	<version>${spring.version}</version>
-	</dependency>
-	<dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-webmvc</artifactId>
-	<version>${spring.version}</version>
-	</dependency>
+  	
 	
 	<!-- tiles dependency -->
     <dependency>

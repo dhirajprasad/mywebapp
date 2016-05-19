@@ -15,6 +15,11 @@ public class LoggingAspect {
 		System.out.println("logAfter() is running!");
 		System.out.println("hijacked : " + joinPoint.getSignature().getName());
 		System.out.println("******"+joinPoint.METHOD_EXECUTION);
+		System.out.println(joinPoint.getArgs());
+		Object[] arr=joinPoint.getArgs();
+		for (Object object : arr) {
+			System.out.println(">>><<<"+object);
+		}
 
 	}
 	

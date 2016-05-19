@@ -31,8 +31,9 @@
  
   <modules>
   	<module>simplecore</module>
+  	<module>webappDAO</module>
   	<!-- <module>simpleweb</module> -->
     <module>webapp</module>
-    <module>webappDAO</module>
+    
   </modules>
 </project>
