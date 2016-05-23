@@ -9,6 +9,9 @@ import org.springframework.stereotype.Component;
 @Aspect@Component
 public class LoggingAspect {
 
+	public LoggingAspect() {
+		System.out.println("*********creating LoggingAspect*********");
+	}
 	@After("execution(* com.webapp.service.EmployeeService.addEmployee(..))")
 	public void logAfter(JoinPoint joinPoint) {
 
@@ -18,7 +21,7 @@ public class LoggingAspect {
 		System.out.println(joinPoint.getArgs());
 		Object[] arr=joinPoint.getArgs();
 		for (Object object : arr) {
-			System.out.println(">>><<<"+object);
+			System.out.println(">>>dhiraj<<<"+object);
 		}
 
 	}
