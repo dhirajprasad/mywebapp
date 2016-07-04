@@ -27,7 +27,7 @@ ${message}
     <h2><spring:message code="lbl.page" text="Add New Employee" /></h2>
     <br/>
     <form:form method="post" action="addEmployee.htm" modelAttribute="employee">
-        <%-- <form:errors path="*" cssClass="error" /> --%>
+         <form:errors path="*" cssClass="error" /> 
         <table>
             <tr>
                 <td><spring:message code="lbl.firstName" text="First Name" /></td>
