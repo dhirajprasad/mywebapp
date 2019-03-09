@@ -1,7 +1,5 @@
 package com.webapp.modal;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -11,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
@@ -28,7 +27,7 @@ public class Student implements Serializable{
 	private Set<Course> course =new HashSet<Course>();
 	
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "STUDENT_ID", unique = true, nullable = false)
 	public Integer getSid() {
 		return sid;

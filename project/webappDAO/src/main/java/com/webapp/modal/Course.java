@@ -14,6 +14,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -57,7 +58,7 @@ public class Course implements Serializable{
 		this.student = student;
 	}
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "CID", unique = true, nullable = false)
 	public Integer getCourseid() {
 		return courseid;
